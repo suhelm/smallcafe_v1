@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cafe Menu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div class="positionlist" th:unless="${#lists.isEmpty(currentPositions)}">
+
+    <h2>Todays Menu</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Item name</th>
+
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ac : ${currentPositions}">
+            <td th:text="${ac.getItemName()}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
